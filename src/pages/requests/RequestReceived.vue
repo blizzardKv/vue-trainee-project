@@ -1,9 +1,13 @@
 <template>
-  <router-view />
+
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: 'RequestReceived',
 };
 </script>
+
+<style scoped>
+
+</style>

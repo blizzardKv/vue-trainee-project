@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  export default {
-    name: "${ COMPONENT_NAME }"
-  }
+export default {
+  name: 'NotFound',
+};
 </script>
 
 <style scoped>
