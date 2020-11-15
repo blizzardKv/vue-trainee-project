@@ -19,6 +19,7 @@
         "vue"
     ],
     "rules": {
-        "linebreak-style": 0
+        "linebreak-style": 0,
+        "vue/no-multiple-template-root": 0
     }
 }
