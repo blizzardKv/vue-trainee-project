@@ -1,5 +1,5 @@
 <template>
-
+  DETAILS FOR COACH
 </template>
 
 <script>
