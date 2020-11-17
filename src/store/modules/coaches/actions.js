@@ -25,13 +25,17 @@ export default {
       id: userId,
     });
   },
-  async loadCoaches(context) {
-    console.log(1);
+  async loadCoaches(context, payload) {
+    if (!payload.forceRefresh && !context.getters.shouldUpdate) {
+      return;
+    }
+
     const response = await fetch('https://angular-spider-138114.firebaseio.com/coaches.json');
     const responseData = await response.json();
 
     if (!response.ok) {
-      // error
+      const error = new Error(responseData.message || 'Failed to fetch!');
+      throw error;
     }
 
     const coaches = [];
@@ -39,6 +43,7 @@ export default {
     // eslint-disable-next-line
     for (const key in responseData) {
       const coach = {
+        id: key,
         firstName: responseData[key].firstName,
         lastName: responseData[key].lastName,
         description: responseData[key].desc,
@@ -49,5 +54,6 @@ export default {
     }
 
     context.commit('setCoaches', coaches);
+    context.commit('setFetchTimestamp');
   },
 };

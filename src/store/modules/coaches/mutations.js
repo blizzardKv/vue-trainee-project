@@ -6,4 +6,8 @@ export default {
     const store = state;
     store.coaches = payload;
   },
+  setFetchTimestamp(state) {
+    // eslint-disable-next-line
+    state.lastFetch = new Date().getTime();
+  },
 };

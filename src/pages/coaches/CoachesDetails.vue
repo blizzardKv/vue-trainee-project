@@ -35,9 +35,6 @@ export default {
     fullName() {
       return `${this.selectedCoach.firstName} ${this.selectedCoach.lastName}`;
     },
-    contactLink() {
-      return `${this.$route.path}/${this.id}/`;
-    },
     areas() {
       return this.selectedCoach.areas;
     },
@@ -46,6 +43,9 @@ export default {
     },
     description() {
       return this.selectedCoach.description;
+    },
+    contactLink() {
+      return `${this.$route.path}/${this.id}/contact`;
     },
   },
   created() {
