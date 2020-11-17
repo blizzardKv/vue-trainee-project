@@ -1,12 +1,12 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="form-control">
-      <label for="email">Your email</label>
-      <input id="email" type="email" v-model.trim="email">
+      <label for="email">Your E-Mail</label>
+      <input type="email" id="email" v-model.trim="email" />
     </div>
-    <div>
-      <label for="message">Your email</label>
-      <textarea id="message" v-model.trim="message"></textarea>
+    <div class="form-control">
+      <label for="message">Message</label>
+      <textarea rows="5" id="message" v-model.trim="message"></textarea>
     </div>
     <p class="errors" v-if="!formIsValid">Invalid!</p>
     <div class="actions">
@@ -17,7 +17,6 @@
 
 <script>
 export default {
-  name: 'ContactCoach',
   data() {
     return {
       email: '',
@@ -28,7 +27,11 @@ export default {
   methods: {
     submitForm() {
       this.formIsValid = true;
-      if (this.email === '' || !this.email.includes('@') || this.message === '') {
+      if (
+        this.email === ''
+        || !this.email.includes('@')
+        || this.message === ''
+      ) {
         this.formIsValid = false;
         return;
       }

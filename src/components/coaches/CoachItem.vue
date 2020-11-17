@@ -20,15 +20,9 @@
 </template>
 
 <script>
-import BaseButton from '../ui/BaseButton.vue';
-import BaseBadge from '../ui/BaseBadge.vue';
 
 export default {
   name: 'CoachItem',
-  components: {
-    BaseBadge,
-    BaseButton,
-  },
   props: ['id', 'firstName', 'lastName', 'rate', 'areas'],
   computed: {
     fullName() {
