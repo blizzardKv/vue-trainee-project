@@ -32,7 +32,6 @@ export default {
 
     const response = await fetch('https://angular-spider-138114.firebaseio.com/coaches.json');
     const responseData = await response.json();
-
     if (!response.ok) {
       const error = new Error(responseData.message || 'Failed to fetch!');
       throw error;
@@ -46,8 +45,8 @@ export default {
         id: key,
         firstName: responseData[key].firstName,
         lastName: responseData[key].lastName,
-        description: responseData[key].desc,
-        hourlyRate: responseData[key].rate,
+        description: responseData[key].description,
+        hourlyRate: responseData[key].hourlyRate,
         areas: responseData[key].areas,
       };
       coaches.push(coach);
